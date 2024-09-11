@@ -5,20 +5,29 @@
     android:id="@+id/nav_graph.xml"
     app:startDestination="@id/taskFragment">
 
-
     <fragment
         android:id="@+id/taskFragment"
         android:name="com.example.hw6_7m.presentation.ui.fragments.taskList.TaskFragment"
         android:label="fragment_task"
-        tools:layout="@layout/fragment_task" >
+        tools:layout="@layout/fragment_task">
         <action
-            android:id="@+id/action_taskFragment_to_taskDetailsFragment"
-            app:destination="@id/taskDetailsFragment" />
+            android:id="@+id/action_taskFragment_to_taskCreateFragment"
+            app:destination="@id/taskCreateFragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/taskDetailsFragment"
-        android:name="com.example.hw6_7m.presentation.ui.fragments.taskDetails.TaskDetailsFragment"
-        android:label="fragment_task_details"
-        tools:layout="@layout/fragment_task_details" />
+        android:id="@+id/taskCreateFragment"
+        android:name="com.example.hw6_7m.presentation.ui.fragments.taskCreate.TaskCreateFragment"
+        android:label="fragment_task_create"
+        tools:layout="@layout/fragment_task_create" />
+    <fragment
+        android:id="@+id/taskDetailFragment"
+        android:name="com.example.hw6_7m.presentation.ui.fragments.taskDetail.TaskDetailFragment"
+        android:label="fragment_task_detail"
+        tools:layout="@layout/fragment_task_detail">
+        <argument
+            android:name="task"
+            app:argType="com.example.hw6_7m.presentation.models.TaskEntityUi" />
+    </fragment>
+
 </navigation>

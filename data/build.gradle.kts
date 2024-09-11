@@ -53,4 +53,7 @@ dependencies {
 
     //Koin
     implementation("io.insert-koin:koin-android:3.5.6")
+
+    //Coroutines
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1")
 }

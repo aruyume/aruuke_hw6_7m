@@ -6,9 +6,12 @@ import com.example.domain.model.TaskModel
 
 @Entity(tableName = "task_table")
 data class TaskEntityDto(
-    @PrimaryKey(autoGenerate = true) val taskId: Int = 0,
-    val taskName: String
+    @PrimaryKey(autoGenerate = true) val taskId: Long = 0,
+    val taskName: String,
+    val description: String,
+    val time: Long
 )
 
-fun TaskEntityDto.toDomain() = TaskModel(taskId, taskName)
-fun TaskModel.fromDomain() = TaskEntityDto(taskId, taskName)
+fun TaskEntityDto.toDomain() = TaskModel(taskId, taskName, description, time)
+
+fun TaskModel.toEntity() = TaskEntityDto(taskId, taskName, description, time)

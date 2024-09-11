@@ -1,4 +1,4 @@
-package com.example.hw6_7m.presentation.ui.fragments.taskDetails
+package com.example.hw6_7m.presentation.ui.fragments.taskCreate
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -7,7 +7,7 @@ import com.example.hw6_7m.presentation.models.TaskEntityUi
 import com.example.hw6_7m.presentation.models.fromDomain
 import kotlinx.coroutines.launch
 
-class TaskDetailsViewModel(
+class TaskCreateViewModel(
     private val insertTaskUseCase: InsertTaskUseCase,
 ) : ViewModel() {
 

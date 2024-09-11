@@ -10,4 +10,5 @@ java {
 
 dependencies {
     implementation("io.insert-koin:koin-core:3.5.6")
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1")
 }

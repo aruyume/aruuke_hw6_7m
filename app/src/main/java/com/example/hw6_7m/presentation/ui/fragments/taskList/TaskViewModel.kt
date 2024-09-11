@@ -4,26 +4,27 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.domain.usecase.DeleteTaskUseCase
 import com.example.domain.usecase.FetchTasksUseCase
-import com.example.domain.usecase.GetTaskUseCase
+import com.example.hw6_7m.presentation.models.TaskEntityUi
+import com.example.hw6_7m.presentation.models.toUi
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 
 class TaskViewModel(
-    private val getTaskUseCase: GetTaskUseCase,
-    private val deleteTaskUseCase: DeleteTaskUseCase,
-    private val fetchTasksUseCase: FetchTasksUseCase
+    private val getTaskUseCase: FetchTasksUseCase,
+    private val deleteTaskUseCase: DeleteTaskUseCase
 ) : ViewModel() {
 
-    fun getTaskById(taskId: Int) {
-        viewModelScope.launch {
-            getTaskUseCase(taskId)
-        }
-    }
-
-    fun deleteTask(taskId: Int) {
+    fun deleteTask(taskId: Long) {
         viewModelScope.launch {
             deleteTaskUseCase(taskId)
         }
     }
 
-    suspend fun fetchTasks() = fetchTasksUseCase()
+    fun getTasks(): Flow<List<TaskEntityUi>> {
+        return getTaskUseCase()
+            .map { taskModels ->
+                taskModels.map { it.toUi() }
+            }
+    }
 }
