@@ -1,4 +1,4 @@
-package com.example.hw6_7m.di
+package com.example.data.di
 
 import com.example.data.repository.TaskRepositoryImpl
 import com.example.domain.repository.TaskRepository

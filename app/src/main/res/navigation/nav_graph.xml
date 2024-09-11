@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/taskFragment"
-        android:name="com.example.hw6_7m.presentation.ui.fragments.TaskFragment"
+        android:name="com.example.hw6_7m.presentation.ui.fragments.taskList.TaskFragment"
         android:label="fragment_task"
         tools:layout="@layout/fragment_task" >
         <action
@@ -18,7 +18,7 @@
 
     <fragment
         android:id="@+id/taskDetailsFragment"
-        android:name="com.example.hw6_7m.presentation.ui.fragments.TaskDetailsFragment"
+        android:name="com.example.hw6_7m.presentation.ui.fragments.taskDetails.TaskDetailsFragment"
         android:label="fragment_task_details"
         tools:layout="@layout/fragment_task_details" />
 </navigation>

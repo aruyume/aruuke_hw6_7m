@@ -1,9 +1,10 @@
 package com.example.domain.repository
 
-import com.example.domain.model.Task
+import com.example.domain.model.TaskModel
 
 interface TaskRepository {
-    suspend fun insertTask(task: Task)
-    suspend fun getTaskById(taskId: Int): Task?
+    suspend fun insertTask(taskModel: TaskModel)
+    suspend fun getTaskById(taskId: Int): TaskModel?
     suspend fun deleteTask(taskId: Int)
+    suspend fun fetchTasks() : List<TaskModel>
 }

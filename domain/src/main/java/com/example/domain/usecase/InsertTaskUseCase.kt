@@ -1,10 +1,10 @@
 package com.example.domain.usecase
 
-import com.example.domain.model.Task
+import com.example.domain.model.TaskModel
 import com.example.domain.repository.TaskRepository
 
 class InsertTaskUseCase(private val taskRepository: TaskRepository) {
-    suspend fun execute(task: Task) {
+    suspend operator fun invoke(task: TaskModel) {
         taskRepository.insertTask(task)
     }
 }

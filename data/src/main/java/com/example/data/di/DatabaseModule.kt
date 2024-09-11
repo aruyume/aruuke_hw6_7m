@@ -1,4 +1,4 @@
-package com.example.hw6_7m.di
+package com.example.data.di
 
 import com.example.data.db.AppDatabase
 import org.koin.core.module.Module
