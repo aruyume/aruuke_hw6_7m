@@ -22,7 +22,10 @@ class TaskFragment : Fragment() {
 
     private val viewModel: TaskViewModel by viewModel()
 
-    private val taskListAdapter = TaskAdapter()
+    private val taskListAdapter = TaskAdapter { task ->
+        val action = TaskFragmentDirections.actionTaskFragmentToTaskDetailFragment(task)
+        findNavController().navigate(action)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
